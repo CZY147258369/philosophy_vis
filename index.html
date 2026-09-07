@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>哲学家星图 · Philosophers Across Time & Place</title>
+    <link rel="icon" type="image/svg+xml" href="./logo.svg" />
+    <link rel="apple-touch-icon" href="./logo.svg" />
+    <meta name="description" content="118 位东西方哲学家在时间与地理之上的可视化星图。An interactive map of 118 philosophers across time and civilizations." />
+    <meta property="og:title" content="哲学家星图 · Philosophers Across Time & Place" />
+    <meta property="og:description" content="118 位东西方哲学家在时间与地理之上的可视化星图。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/index-BbPBkjx-.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BNJ8Ff0Q.css">
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <h1>
+          <img src="./logo.svg" class="topbar-logo" alt="" aria-hidden="true" />
+          <span class="title-zh">哲学家星图</span>
+          <span class="title-en">Philosophers Across Time &amp; Place</span>
+        </h1>
+        <div class="controls">
+          <select id="school-filter" class="school-select" aria-label="按流派筛选">
+            <option value="">全部流派 · All Schools</option>
+          </select>
+          <input id="search" type="search" placeholder="搜索 / Search…" />
+          <label class="toggle">
+            <input id="toggle-lineage" type="checkbox" />
+            <span>显示影响连线</span>
+          </label>
+          <label class="toggle">
+            <input id="toggle-show-all" type="checkbox" />
+            <span>显示所有人</span>
+          </label>
+          <div
+            class="lang-toggle"
+            role="group"
+            aria-label="姓名语言切换"
+            data-active="zh"
+          >
+            <button type="button" class="lang-btn" data-lang="zh" aria-pressed="true">中</button>
+            <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+          </div>
+          <button
+            id="donate-btn"
+            type="button"
+            class="donate-btn"
+            aria-label="请作者喝杯茶 / Buy me a tea"
+            title="请作者喝杯茶 / Buy me a tea"
+          >☕</button>
+        </div>
+      </header>
+
+      <div id="donate-modal" class="donate-modal" hidden role="dialog" aria-labelledby="donate-title" aria-modal="true">
+        <div class="donate-backdrop"></div>
+        <div class="donate-card">
+          <button type="button" class="donate-close" aria-label="关闭">×</button>
+          <h3 id="donate-title">如果你想支持这个项目 ☕</h3>
+          <p class="donate-sub">A small thank-you means a lot.</p>
+          <div class="donate-methods">
+            <figure class="donate-method">
+              <img src="./donate/wechat.jpg" alt="微信收款码" />
+              <figcaption>微信扫一扫</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <main class="stage">
+        <div id="map-root"></div>
+        <aside id="sidebar" class="sidebar collapsed" aria-hidden="true"></aside>
+        <div id="tooltip" class="tooltip" aria-hidden="true"></div>
+        <div id="cinematic-caption" class="cinematic-caption" aria-hidden="true">
+          <div class="caption-eyebrow-row">
+            <span class="caption-rule-side caption-rule-left"></span>
+            <span class="caption-eyebrow"></span>
+            <span class="caption-rule-side caption-rule-right"></span>
+          </div>
+          <div class="caption-note"></div>
+          <div class="caption-rule-bottom"></div>
+        </div>
+      </main>
+
+      <footer class="timeline-bar">
+        <button id="play" class="play-btn" aria-label="自动播放">▶</button>
+        <select id="speed-select" class="speed-select" aria-label="播放速度">
+          <option value="0.5">0.5×</option>
+          <option value="1" selected>1×</option>
+          <option value="2">2×</option>
+          <option value="4">4×</option>
+        </select>
+        <div class="timeline-wrap">
+          <div class="loop-band" aria-hidden="true"></div>
+          <input
+            id="timeline"
+            type="range"
+            min="-600"
+            max="2000"
+            value="-400"
+            step="1"
+          />
+          <div class="timeline-ticks" aria-hidden="true"></div>
+          <button
+            class="loop-handle loop-handle-start"
+            type="button"
+            aria-label="区间起点(双击重置)"
+          ></button>
+          <button
+            class="loop-handle loop-handle-end"
+            type="button"
+            aria-label="区间终点(双击重置)"
+          ></button>
+        </div>
+        <div id="year-label" class="year-label">公元前 400</div>
+      </footer>
+    </div>
+  </body>
+</html>
