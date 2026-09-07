@@ -1,0 +1,23 @@
+打开黑色命令窗口：
+
+按键盘上的 Win + R，输入 cmd，然后按回车。
+
+进入项目文件夹：
+
+在黑色窗口中输入以下命令并按回车：
+
+cmd
+cd C:\Users\czy\philosophy_vis
+启动开发服务器：
+
+输入以下命令并按回车：
+
+cmd
+npm run dev
+等待几秒钟，直到终端里出现类似这样的提示：
+
+text
+➜  Local:   http://127.0.0.1:5188/
+➜  Network: use --host to expose
+看到这行字之后，再按住 Ctrl 键并用鼠标点击 http://127.0.0.1:5188/，浏览器就会重新打开项目。
+
